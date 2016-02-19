@@ -3,7 +3,7 @@ template(name="navbar")
   nav.navbar.navbar-default(role="navigation")
     .container
       .navbar-header
-        button.navbar-toggle(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+        button.navbar-toggle(type="button" data-toggle="collapse" data-target="#lyutique-navbar-collapse-1")
           span.sr-only Toggle navigation
           span.icon-bar
           span.icon-bar
@@ -11,11 +11,11 @@ template(name="navbar")
 
         a.navbar-brand(href="index.html") Lyutique
 
-      .collapse.navbar-collapse#bs-example-navbar-collapse-1
-        ul.nav navbar-nav
-          li
+      .collapse.navbar-collapse(id="lyutique-navbar-collapse-1")
+        ul.nav.navbar-nav
+          li.nav-a
             a(href="index.html") головна
-          li.dropdown
+          li.dropdown.nav-a
             a(href="shop.html") магазин
             ul.sub-menu
                 li
@@ -24,12 +24,12 @@ template(name="navbar")
                   a(href="soul.html") <small>для</small> тіла
                 li
                   a(href="soul.html") <small>для</small> волосся
-          li
+          li.nav-a
             a(href="about.html") про нас
-          li
+          li.nav-a
             a(href="contact.html") контакти
           li
             div
             a(href="#")
-              img(src="img/cart2.png" alt="")
+              img.img-cart(src="img/cart2.png" alt="")
     
