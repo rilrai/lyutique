@@ -23,3 +23,4 @@ twbs:bootstrap
 accounts-password
 mquandalle:jade
 iron:router
+sacha:spin

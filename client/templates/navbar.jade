@@ -9,12 +9,12 @@ template(name="navbar")
           span.icon-bar
           span.icon-bar
 
-        a.navbar-brand(href="index.html") Lyutique
+        a.navbar-brand(href="{{pathFor 'indexTemplate'}}") Lyutique
 
       .collapse.navbar-collapse(id="lyutique-navbar-collapse-1")
         ul.nav.navbar-nav
           li.nav-a
-            a(href="index.html") головна
+            a(href="{{pathFor 'indexTemplate'}}") головна
           li.dropdown.nav-a
             a(href="shop.html") магазин
             ul.sub-menu
