@@ -1,0 +1,32 @@
+template(name="adminPage")
+  .container
+    .row
+      .box(style="height: 400px; overflow: auto")
+        .col-lg-12(style="text-align:center")
+          unless validation
+            label.someMargin#passLabel Будьте ласкаві ввести пароль
+            input.someMargin#passInput
+            button.btn.btn-default.someMargin#passBtn Вперед до налаштувать!
+
+          else
+            .container
+              .row
+                .col-md-6(style="text-align: right")
+                  label Чого пані бажає?
+                .col-md-6(style="text-align: left")
+                  select#desireSelect
+                    option(value="0") 
+                    option(value="1") Додати новину
+                    option(value="2") Додати товар
+                    option(value="3") Видалити новину
+                    option(value="4") Видалити товар
+                    option(value="5") Любові...
+
+              hr(style="width: 50%; text-align:center")
+
+              {{> addNews}}
+            
+
+            
+
+

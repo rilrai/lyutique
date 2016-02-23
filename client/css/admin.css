@@ -2,3 +2,16 @@
   margin: 10px;
   position: relative;
 }
+
+.btns-admin {
+  margin: 10px;
+  text-align: center;
+}
+
+.title-admin {
+  height: 35px;
+}
+
+.text-admin {
+  height: 70px
+}
