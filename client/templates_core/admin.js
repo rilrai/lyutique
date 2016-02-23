@@ -12,7 +12,7 @@ Template.adminPage.helpers({
 });
 
 Template.adminPage.events({
-  'click #passBtn': function() {
+  'click #passBtn': function(e,t) {
     var pass = "123",
         input = document.getElementById("passInput").value,
         label = document.getElementById("passLabel"),
@@ -25,6 +25,12 @@ Template.adminPage.events({
       label.textContent = "Помилочка...";
       return false
     }
+  },
+
+  'change #desireSelect': function(e,t) {
+    var val = e.currentTarget.value;
+    console.log(val);
+    return val
   },
 
 });
