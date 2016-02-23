@@ -25,3 +25,4 @@ mquandalle:jade
 iron:router
 sacha:spin
 email
+reactive-var

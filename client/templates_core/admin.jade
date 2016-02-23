@@ -1,0 +1,12 @@
+template(name="adminPage")
+  .container
+    .row
+      .box(style="height: 100px")
+        .col-md-12
+          unless validation
+            label#passLabel Будьте ласкаві ввести пароль
+            input#passInput
+            button.btn.btn-default#passBtn Вперед до налаштувать!
+
+          else
+            label Password is correct
