@@ -1,0 +1,23 @@
+template(name="lipsEyes")
+  .container
+    each goods
+      .row
+        .box(style="height: 400px")
+          .col-lg-12
+            hr
+            h2.intro-text.text-center #{this.name}
+            hr
+          .col-md-6
+            img.img-responsive.img-border-left(src="#{this.img_src}" alt="")
+          .col-md-6
+            p #{this.text}
+            p #{this.amount} - #{this.price}
+            .input-group
+              span.input-group-btn
+                button.btn.btn-default(type="button" data-value="decrease" data-target="#spinner" data-toggle="spinner")
+                  span.glyphicon.glyphicon-minus
+              input.form-control.input-number(type="text" data-ride="spinner" id="spinner" value="1" style="width: 60px")
+              span.input-group-btn
+                button(type="button" class="btn btn-default" data-value="increase" data-target="#spinner" data-toggle="spinner")
+                  span.glyphicon.glyphicon-plus
+            button.btn.btn-default(style="margin-left: 20px") Додати до кошика

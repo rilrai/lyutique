@@ -5,8 +5,11 @@ Template.adminPage.onCreated(function() {
 Template.adminPage.helpers({
   validation: function() {
     var t = Template.instance();
-
-    return t.valid.get()
+    if (t.valid.get()) {
+      Session.set("security", true);
+      return true
+    }
+    return false
   },
 
 });
