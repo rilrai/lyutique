@@ -25,3 +25,6 @@ iron:router
 sacha:spin
 email
 reactive-var
+cfs:standard-packages
+cfs:filesystem
+dbarrett:dropzonejs
