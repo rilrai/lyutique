@@ -1,0 +1,47 @@
+template(name="cart")
+  .container
+    .row
+      .box
+        .col-lg-12(style="text-align:center")
+          hr
+          h2.intro-text.text-center #[strong Корзина]
+          hr
+          .cart-table
+            table
+              tr
+                td(style="width: 300px") #[strong товар]
+                td #[strong кількість]
+                td #[strong ціна за одиницю]
+                td #[strong сума]
+              each goodsNames
+                tr
+                  td(style="width: 300px") #{this.name}
+                  td #{this.quantity}
+                  td #{this.price} грн.
+                  td #{this.total} грн.
+                  td
+                    button.btn.btn-default видалити з корзини
+          br
+          label загальна сума {{totalPrice}} грн.
+          hr
+        .col-md-6(style="text-align: right")
+          label Ваше ім'я
+          br
+          label(style="margin-top: 10px") Ваш номер телефону
+        .col-md-6(style="text-align: left")
+          input
+          br
+          input(style="margin-top: 10px")
+
+        //- .col-md-6(style="text-align: right")
+        //-   label Ваш номер телефону
+        //- .col-md-6(style="text-align: left")
+        //-   input
+
+        .col-lg-12(style="text-align:center")
+          textarea(style="width: 300px; height: 150px; margin-top: 30px") Додайте ваш коментар тут
+          hr
+          button.btn.btn-primary Оформити замовлення
+          
+
+
