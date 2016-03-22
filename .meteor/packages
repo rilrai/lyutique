@@ -25,3 +25,4 @@ iron:router
 sacha:spin
 email
 reactive-var
+insecure
