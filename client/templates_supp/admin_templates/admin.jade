@@ -9,22 +9,24 @@ template(name="adminPage")
             button.btn.btn-default.someMargin#passBtn Вперед до налаштувать!
 
           else
-            .container
-              .row
-                .col-md-6(style="text-align: right")
-                  label Чого пані бажає?
-                .col-md-6(style="text-align: left")
-                  select#desireSelect
-                    option(value="0") 
-                    option(value="1") Додати новину
-                    option(value="2") Додати товар
-                    option(value="3") Видалити новину
-                    option(value="4") Видалити товар
-                    option(value="5") Любові...
+            .row
+              .col-md-6(style="text-align: right")
+                label Чого пані бажає?
+              .col-md-6(style="text-align: left")
+                select#desireSelect
+                  option(value="0") 
+                  option(value="1") Додати новину
+                  option(value="2") Додати товар
+                  option(value="3") Видалити новину
+                  option(value="4") Видалити товар
+                  option(value="5") Любові...
 
-              hr(style="width: 50%; text-align:center")
+            hr(style="width: 50%; text-align:center")
 
+            if desireAddNews
               {{> addNews}}
+            if desireAddGoods
+              {{> addGoods}}
             
 
             

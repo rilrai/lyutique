@@ -1,5 +1,6 @@
 Template.adminPage.onCreated(function() {
   this.valid = new ReactiveVar(false);
+  this.desire = new ReactiveVar("0");
 }) 
 
 Template.adminPage.helpers({
@@ -9,6 +10,30 @@ Template.adminPage.helpers({
       Session.set("security", true);
       return true
     }
+    return false
+  },
+  desireAddNews: function() {
+    var t = Template.instance();
+    if (t.desire.get() == 1)
+      return true
+    return false
+  },
+  desireAddGoods: function() {
+    var t = Template.instance();
+    if (t.desire.get() == 2)
+      return true
+    return false
+  },
+  desireDelNews: function() {
+    var t = Template.instance();
+    if (t.desire.get() == 3)
+      return true
+    return false
+  },
+  desireDelGoods: function() {
+    var t = Template.instance();
+    if (t.desire.get() == 4)
+      return true
     return false
   },
 
@@ -32,8 +57,7 @@ Template.adminPage.events({
 
   'change #desireSelect': function(e,t) {
     var val = e.currentTarget.value;
-    console.log(val);
-    return val
+    t.desire.set(val);
   },
 
 });
