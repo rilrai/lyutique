@@ -1,5 +1,26 @@
 News = new Mongo.Collection("news");
-<<<<<<< HEAD
+var textSchema = new SimpleSchema({
+  paragraph: {
+    type: String
+  }
+})
+
+News.attachSchema(new SimpleSchema({
+    titlePlain: {
+      type: String
+    },
+    titleStrong: {
+      type: String,
+      optional: true
+    },
+    image: {
+      type: String,
+    },
+    text: {
+      type: [textSchema]
+    }
+
+}));
 // News.allow({
 //   insert: function () {
 //     if (Session.get("security")) return true
@@ -22,28 +43,8 @@ Goods = new Mongo.Collection("goods");
 //     return false
 //   }
 // });
-=======
-News.allow({
-  insert: function () {
-    return true
-  },
-  // remove: function () {
-  //   if (Session.get("security")) return true
-  //   return false
-  // }
-});
 
-Goods = new Mongo.Collection("goods");
-Goods.allow({
-  insert: function () {
-    return true
-  },
-  // remove: function () {
-  //   if (Session.get("security")) return true
-  //   return false
-  // }
-});
->>>>>>> 7a8b1b26da045d1ca31f3da18f1252ed2bb6a2d7
+
 
 Images = new FS.Collection("images", {
   stores: [new FS.Store.FileSystem("images", {path: "~/uploads"})]

@@ -31,3 +31,7 @@ cfs:standard-packages
 cfs:filesystem
 dbarrett:dropzonejs
 
+aldeed:simple-schema
+aldeed:autoform
+cfs:gridfs
+aldeed:collection2
