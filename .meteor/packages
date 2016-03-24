@@ -18,6 +18,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 autopublish             # Publish all data to the clients (for prototyping)
 accounts-ui
+
 twbs:bootstrap
 accounts-password
 mquandalle:jade
@@ -29,9 +30,9 @@ reactive-var
 insecure
 cfs:standard-packages
 cfs:filesystem
-dbarrett:dropzonejs
 
 aldeed:simple-schema
 aldeed:autoform
 cfs:gridfs
 aldeed:collection2
+raix:ui-dropped-event

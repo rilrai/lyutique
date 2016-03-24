@@ -1,0 +1,10 @@
+template(name="carouselForGoods")
+  .carousel.slide#carousel-example-generic
+    ol.carousel-indicators.hidden-xs
+      each images
+        li(data-target="#carousel-example-generic" data-slide-to="0")
+    
+    .carousel-inner
+      each images
+        .item
+          img.img-responsive.img-full(src="img/#{this}")

@@ -1,7 +1,7 @@
 template(name="adminPage")
   .container
     .row
-      .box(style="height: 800px; overflow: auto")
+      .box(style="height: 1000px; overflow-y: auto")
         .col-lg-12(style="text-align:center")
           unless validation
             label.someMargin#passLabel Будьте ласкаві ввести пароль
@@ -22,11 +22,17 @@ template(name="adminPage")
                   option(value="5") Любові...
 
             hr(style="width: 50%; text-align:center")
-
-            if desireAddNews
-              {{> addNews}}
-            if desireAddGoods
-              {{> addGoods}}
+            .forms(style = "width: 70%; text-align: center")
+              if desireAddNews
+                {{> addNews}}
+              if desireAddGoods
+                {{> addGoods}}
+              if desireDelNews
+                {{> deleteNews}}
+              if desireDelGoods
+                {{> deleteGoods}}
+              if desireDelGoods
+                {{> giveLove}}
             
 
             

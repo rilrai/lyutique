@@ -36,6 +36,12 @@ Template.adminPage.helpers({
       return true
     return false
   },
+  desireLove: function() {
+    var t = Template.instance();
+    if (t.desire.get() == 5)
+      return true
+    return false
+  },
 
 });
 

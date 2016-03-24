@@ -1,6 +1,8 @@
 template(name="addNews")
-  .form(style="width: 90%")
-    +quickForm(collection="News" id="insertNews" type="insert")
+  .news-forms(style="display: inline-block")
+    {{>uploadFiles}}
+    .quickform-news
+      +quickForm(collection="News" id="insertNews" type="insert")
 
 
   //- .row.title-admin
