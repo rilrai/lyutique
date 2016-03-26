@@ -12,33 +12,39 @@ Template.adminPage.helpers({
     }
     return false
   },
-  desireAddNews: function() {
+  desireAddImage: function() {
     var t = Template.instance();
     if (t.desire.get() == 1)
       return true
     return false
   },
-  desireAddGoods: function() {
+  desireAddNews: function() {
     var t = Template.instance();
     if (t.desire.get() == 2)
       return true
     return false
   },
-  desireDelNews: function() {
+  desireAddGoods: function() {
     var t = Template.instance();
     if (t.desire.get() == 3)
       return true
     return false
   },
-  desireDelGoods: function() {
+  desireDelNews: function() {
     var t = Template.instance();
     if (t.desire.get() == 4)
       return true
     return false
   },
-  desireLove: function() {
+  desireDelGoods: function() {
     var t = Template.instance();
     if (t.desire.get() == 5)
+      return true
+    return false
+  },
+  desireLove: function() {
+    var t = Template.instance();
+    if (t.desire.get() == 6)
       return true
     return false
   },

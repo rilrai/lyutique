@@ -1,18 +1,7 @@
-// Meteor.methods({
-//   'updateMyInfo': function(myInfoId, myGraphic){
-//     console.log("file = " + myGraphic);
-//     myInfo.update (
-//       {"_id": myInfoId},
-//       {$set: {"myGraphic": myGraphic}}    
-//     )
-//   },
+Meteor.methods({
+  uploadFile: function (file) {
+    file.save('/Users/cmather/tmp/uploads/');
+  }
+});
 
-//   'insertImage': function(myInfoId, myGraphic){
-//     console.log("file = " + myGraphic);
-//     myInfo.update (
-//       {"_id": myInfoId},
-//       {$set: {"myGraphic": myGraphic}}    
-//     )
-//   },
-// })
 

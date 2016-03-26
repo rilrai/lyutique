@@ -1,6 +1,10 @@
 Template.carouselForGoods.helpers({
   images: function() {
-    var arr = {'masha.jpg', 'olya.jpg', 'about.jpg'};
+    var arr = ['olya.jpg'];
     return arr
+  },
+  firstImage: function() {
+    var result = ['masha.jpg'];
+    return result
   }
 })

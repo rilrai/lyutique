@@ -1,7 +1,17 @@
 Template.lipsEyes.helpers({
   goods: function() {
-    var result = Goods.find({category: 'lipsEyes'});
+    var result = Goods.find({category: 'Lips & eyes'});
     return result
+  },
+  image: function() {
+    var src = this.images[0].image,
+        result;
+    try {
+      result = Images.findOne({'original.name': src});
+    } catch(err) {}
+
+    if (result)
+      return result._id
   }
 })
 
@@ -10,13 +20,3 @@ Template.lipsEyes.events({
     //create general function for adding goods to cart
   }
 })
-
-// var ins = {
-//   _id: 'tovar_1',
-//   category: 'lipsEyes',
-//   name: 'new Tovar',
-//   text: 'tovar-tovar-tovar, ya ya ya',
-//   amount: '50ml',
-//   price: '50грн.'
-// }
-// Goods.insert(ins)

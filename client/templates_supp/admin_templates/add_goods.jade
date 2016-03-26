@@ -1,29 +1,4 @@
 template(name="addGoods")
-  .row.title-admin
-    .col-md-6(style="text-align: right")
-      label Заголовок товару (звичана частина)
-    .col-md-6(style="text-align: left")
-      input#ag-title(style="width: 250px")
-
-  .row.title-admin
-    .col-md-6(style="text-align: right")
-      label Заголовок товару (жирна частина)
-    .col-md-6(style="text-align: left")
-      input#ag-strong(style="width: 250px")
-
-  .row.title-admin
-    .col-md-6(style="text-align: right")
-      label Назва зображення
-    .col-md-6(style="text-align: left")
-      input#ag-img(style="width: 250px")
-
-  .row.text-admin
-    .col-md-6(style="text-align: right")
-      label Опис товару
-    .col-md-6(style="text-align: left")
-      textarea#ag-text(style="hight: 60px; width: 250px")
-
-  hr(style="width: 50%; text-align:center")
-  .row
-    .btns-admin.col-md-12
-      button.btn.btn-primary Додати #[strong новину]
+  .news-forms
+    .quickform-goods
+      +quickForm(collection="Goods" id="insertGoods" type="insert")

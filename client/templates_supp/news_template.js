@@ -3,7 +3,7 @@ Template.newsTemplate.helpers({
     var src = this.image,
         result;
     try {
-      result = Images.find({'original.name': src})
+      result = Images.findOne({'original.name': src}).url()
     } catch(err) {}
 
     if (result)

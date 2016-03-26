@@ -35,4 +35,4 @@ aldeed:simple-schema
 aldeed:autoform
 cfs:gridfs
 aldeed:collection2
-raix:ui-dropped-event
+dbarrett:dropzonejs

@@ -1,35 +1,10 @@
 template(name="addNews")
-  .news-forms(style="display: inline-block")
-    {{>uploadFiles}}
+  .news-forms
+    //- form(action="handler.php" enctype="multipart/form-data" method="post")
+    //-   p Загрузите файл с картинкой
+    //-   p
+    //-     input(type="file" name="pic")
+    
+
     .quickform-news
       +quickForm(collection="News" id="insertNews" type="insert")
-
-
-  //- .row.title-admin
-  //-   .col-md-6(style="text-align: right")
-  //-     label Заголовок новини (звичана частина)
-  //-   .col-md-6(style="text-align: left")
-  //-     input#an-title(style="width: 250px")
-
-  //- .row.title-admin
-  //-   .col-md-6(style="text-align: right")
-  //-     label Заголовок новини (жирна частина)
-  //-   .col-md-6(style="text-align: left")
-  //-     input#an-strong(style="width: 250px")
-
-  //- .row.title-admin
-  //-   .col-md-6(style="text-align: right")
-  //-     label Назва зображення
-  //-   .col-md-6(style="text-align: left")
-  //-     input#an-img(style="width: 250px")
-
-  //- .row.text-admin
-  //-   .col-md-6(style="text-align: right")
-  //-     label Опис новини
-  //-   .col-md-6(style="text-align: left")
-  //-     textarea#an-text(style="hight: 60px; width: 250px")
-
-  //- hr(style="width: 50%; text-align:center")
-  //- .row
-  //-   .btns-admin.col-md-12
-  //-     button.btn.btn-primary Додати #[strong новину]

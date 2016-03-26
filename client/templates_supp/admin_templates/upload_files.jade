@@ -1,6 +1,4 @@
 template(name="uploadFiles")
   .row
     .col-md-12
-      .dropzone#dropzone
-        .well.well-drop-zone
-          | Drop file(s) here to upload
+      form(action="/file-upload" class="dropzone" id="dropzone")

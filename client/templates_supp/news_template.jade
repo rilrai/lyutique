@@ -6,7 +6,7 @@ template(name="newsTemplate")
         h2.intro-text.text-center #{this.titlePlain} #[strong #{this.titleStrong}]
         hr
       .col-md-6
-        img.img-responsive.img-border-left(src="img/#{this.image}" alt="")
+        img.img-responsive.img-border-left(src="#{image}" alt="" width="500px" height="400px")
       .col-md-6
         each this.text
           p #{this.paragraph}

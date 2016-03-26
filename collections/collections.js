@@ -1,11 +1,34 @@
-News = new Mongo.Collection("news");
+// ------ Additionsl Schemas ------------
+var textSchema, imageSchema, priceSchema;
 
-var textSchema = new SimpleSchema({
+textSchema = new SimpleSchema({
   paragraph: {
     type: String
   }
 })
 
+imageSchema = new SimpleSchema({
+  image: {
+    type: String
+  }
+})
+
+priceSchema = new SimpleSchema({
+  amount: {
+    type: String
+  },
+  units: {
+    type: String,
+    allowedValues: ['мл.', 'гр.']
+  },
+  cost: {
+    type: String
+  }
+})
+
+// ------ Collections and Schemas ----------
+
+News = new Mongo.Collection("news");
 News.attachSchema(new SimpleSchema({
     titlePlain: {
       type: String
@@ -21,19 +44,8 @@ News.attachSchema(new SimpleSchema({
       type: [textSchema]
     }
 }));
-// News.allow({
-//   insert: function () {
-//     if (Session.get("security")) return true
-//     return false
-//   },
-//   remove: function () {
-//     if (Session.get("security")) return true
-//     return false
-//   }
-// });
 
 Goods = new Mongo.Collection("goods");
-
 Goods.attachSchema(new SimpleSchema({
     titlePlain: {
       type: String
@@ -42,40 +54,24 @@ Goods.attachSchema(new SimpleSchema({
       type: String,
       optional: true
     },
-    image: {
+    category: {
       type: String,
+      allowedValues: ['Lips & eyes', 'Hands & legs', 'Face creams', 'Face care', 'Perfumes', 'Body care', 'Hair care', 'Scrubs', 'Bath & soul', 'Maski-show', 'Sets']
+    },
+    goodsType: {
+      type: String,
+      allowedValues: ['single', 'multi']
     },
     text: {
       type: [textSchema]
+    },
+    images: {
+      type: [imageSchema]
+    },
+    price: {
+      type: [priceSchema]
     }
-    
 }));
-// Goods.allow({
-//   insert: function () {
-//     if (Session.get("security")) return true
-//     return false
-//   },
-//   remove: function () {
-//     if (Session.get("security")) return true
-//     return false
-//   }
-// });
-
-// @newsImgsStore = new FS.Store.GridFS 'news_imgs'
-
-// @NewsImages = new FS.Collection 'news_imgs',
-//   stores: [newsImgsStore]
-//   filter:
-//     maxSize: 30*1024*1024 # 30 Mb
-//     allow:
-//       extensions: [
-//         'jpeg', 'jpg', 'png', 'gif'
-//       ]
-
-//       contentTypes: [
-//         'image/*'
-//       ]
-
 
 Images = new FS.Collection("images", {
   stores: [new FS.Store.FileSystem("images", {path: "~/uploads"})],
@@ -88,6 +84,33 @@ Images = new FS.Collection("images", {
   }
 });
 
+// --------- Permissions -----------
+
+
+// News.allow({
+//   insert: function () {
+//     if (Session.get("security")) return true
+//     return false
+//   },
+//   remove: function () {
+//     if (Session.get("security")) return true
+//     return false
+//   }
+// });
+
+
+// Goods.allow({
+//   insert: function () {
+//     if (Session.get("security")) return true
+//     return false
+//   },
+//   remove: function () {
+//     if (Session.get("security")) return true
+//     return false
+//   }
+// });
+
+
 Images.allow({
   update: function () {
     return true
@@ -95,5 +118,11 @@ Images.allow({
   insert: function () {
     return true
   },
+  remove: function () {
+    return true
+  },
+  download: function () {
+    return true
+  }
 });
 
