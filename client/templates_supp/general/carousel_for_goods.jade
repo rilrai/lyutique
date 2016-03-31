@@ -1,0 +1,13 @@
+template(name="carouselForGoods")
+  .carousel.slide#carousel-example-generic
+    ol.carousel-indicators.hidden-s
+      li.active(data-target="#carousel-example-generic" data-slide-to="0")
+      each images
+        li(data-target="#carousel-example-generic" data-slide-to="#{this.count}")
+    
+    .carousel-inner
+      .item.active
+        img.img-responsive.img-border-left(src="#{firstImage}" alt="" width="100%")
+      each images
+        .item
+          img.img-responsive.img-border-left(src="#{this.img}" alt="" width="100%")

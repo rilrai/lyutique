@@ -2,25 +2,21 @@ template(name="lipsEyes")
   .container
     each goods
       .row
-        .box
+        .box(id="#{this._id}")
           .col-lg-12
             hr
             h2.intro-text.text-center #{this.titlePlain} #[strong #{this.titleStrong}]
             hr
           .col-md-6
-            img.img-responsive.img-border-left(src="#{image}" alt="")
+            {{>carouselForGoods}}
+            //- img.img-responsive.img-border-left(src="#{image}" alt="" width="100%")
           .col-md-6
             each this.text
               p #{this.paragraph}
             hr
             each this.price
-              p #{this.amount}#{this.units} - #{this.cost}грн.
-            .input-group
-              span.input-group-btn
-                button.btn.btn-default(type="button" data-value="decrease" data-target="#spinner" data-toggle="spinner")
-                  span.glyphicon.glyphicon-minus
-              input.form-control.input-number(type="text" data-ride="spinner" id="spinner" value="1" style="width: 60px")
-              span.input-group-btn
-                button(type="button" class="btn btn-default" data-value="increase" data-target="#spinner" data-toggle="spinner")
-                  span.glyphicon.glyphicon-plus
-            button.btn.btn-default(style="margin-left: 20px") Додати до кошика
+              .col-md-8.col-md-offset-2(style="margin-bottom: 5px")
+                label.inline #{this.amount} #{this.units}  -  #{this.cost} грн.
+                button.btn.inline.btn-default(style="float: right" id="#{this.amount}-#{this.units}")
+                  | Додати до кошика
+              br

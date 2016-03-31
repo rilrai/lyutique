@@ -19,7 +19,7 @@ priceSchema = new SimpleSchema({
   },
   units: {
     type: String,
-    allowedValues: ['мл.', 'гр.']
+    allowedValues: ['мл', 'г']
   },
   cost: {
     type: String
@@ -74,7 +74,7 @@ Goods.attachSchema(new SimpleSchema({
 }));
 
 Images = new FS.Collection("images", {
-  stores: [new FS.Store.FileSystem("images", {path: "~/uploads"})],
+  stores: [new FS.Store.GridFS("images", {path: "~/uploads"})],
   filter: {
     maxSize: 1*750*450,
     allow: {
@@ -123,6 +123,21 @@ Images.allow({
   },
   download: function () {
     return true
+  }
+});
+
+Images.deny({
+  insert: function(){
+    return false;
+  },
+  update: function(){
+    return false;
+  },
+  remove: function(){
+    return false;
+  },
+  download: function(){
+    return false;
   }
 });
 
