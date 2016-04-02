@@ -9,7 +9,7 @@ Template.uploadFiles.rendered = function(){
         if(!Images.findOne({'original.name': file.name})){
           Images.insert(file, function(err, fileObj){
             if(err){
-              alert("Error");
+              alert("Розширення або розмір файлу вийшли за межі дозволеного...");
             } else {
               // gets the ID of the image that was uploaded
               var imageId = fileObj._id;

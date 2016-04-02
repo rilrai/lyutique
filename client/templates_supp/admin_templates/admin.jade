@@ -4,6 +4,7 @@ template(name="adminPage")
       .box(style="height: 2000px; overflow-y: auto")
         .col-lg-12(style="text-align:center")
           unless validation
+            {{> loginButtons}}
             label.someMargin#passLabel Будьте ласкаві ввести пароль
             input.someMargin#passInput
             button.btn.btn-default.someMargin#passBtn Вперед до налаштувать!

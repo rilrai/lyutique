@@ -17,6 +17,6 @@ template(name="lipsEyes")
             each this.price
               .col-md-8.col-md-offset-2(style="margin-bottom: 5px")
                 label.inline #{this.amount} #{this.units}  -  #{this.cost} грн.
-                button.btn.inline.btn-default(style="float: right" id="#{this.amount}-#{this.units}")
+                button.btn.inline.btn-default(style="float: right" id="#{this.amount}")
                   | Додати до кошика
               br

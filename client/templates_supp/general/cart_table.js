@@ -1,11 +1,10 @@
-Template.cart.onCreated(function() {
+Template.cartTable.onCreated(function() {
   this.generalCost = new ReactiveVar(0);
   this.generalAmount = new ReactiveVar(0);
-  this.orderInfo = new ReactiveVar();
 }) 
 
 
-Template.cart.helpers({
+Template.cartTable.helpers({
   goodsNames: function() {
     var t = Template.instance(),
         genCost = 0,
@@ -41,7 +40,6 @@ Template.cart.helpers({
 
     t.generalAmount.set(genAmount);
     t.generalCost.set(genCost);
-    t.orderInfo.set(result);
     return result
   },
 
@@ -56,7 +54,7 @@ Template.cart.helpers({
   },
 })
 
-Template.cart.events({
+Template.cartTable.events({
   'click .remove-btn': function(e,t) {
     var el = e.target,
         id = el.id,
@@ -68,36 +66,4 @@ Template.cart.events({
 
     Session.set('Lyutique_cart_piu_piu', sess);
   },
-
-  'click .sendEmail': function(e,t) {
-    var data = {name: "Vova"},
-        html = Blaze.toHTMLWithData(Template.cart, data),
-        emailText = '',
-        emailTitle = '',
-        userName,
-        userContact,
-        t = Template.instance(),
-        order = t.orderInfo.get();
-
-    for(var i=0; i<order.length; i++) {
-      emailText += order[i].name + ':\nкількість - ' + order[i].quantity + '\nціна - ' + order[i].price + ' грн.\n\n';
-    }
-
-    emailText += '\nЗагальна сума ' + t.generalCost.get() + '\n';
-
-    Meteor.call('sendTextEmail',
-                'riddler-@ukr.net',
-                'lyutiquenyashmyash@gmail.com',
-                'Hello from Lyutique!',
-                emailText);
-
-    // Meteor.call('sendHtmlEmail',
-    //             'riddler-@ukr.net',
-    //             'lyutiquenyashmyash@gmail.com',
-    //             'Hello from Lyutique!',
-    //             'some text from me',
-    //             html);
-
-    delete Session.keys['Lyutique_cart_piu_piu'];
-  }
 })

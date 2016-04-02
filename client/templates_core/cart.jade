@@ -4,23 +4,23 @@ template(name="cart")
       .box
         .col-lg-12(style="text-align:center")
           hr
-          h2.intro-text.text-center #[strong Корзина]
+          h2.intro-text.text-center #[strong Кошик]
           hr
           .cart-table
             table
               tr
-                td(style="width: 300px") #[strong товар]
-                td #[strong кількість]
-                td #[strong ціна за одиницю]
-                td #[strong сума]
+                td(style="width: 500px") #[strong товар]
+                td(style="width: 200px") #[strong кількість]
+                td(style="width: 100px") #[strong ціна за одиницю]
+                td(style="width: 100px") #[strong сума]
               each goodsNames
                 tr
-                  td(style="width: 300px") #{this.name}
-                  td #{this.quantity}
-                  td #{this.price} грн.
-                  td #{this.total} грн.
+                  td(style="width: 500px") #{this.name}
+                  td(style="width: 200px") #{this.quantity}
+                  td(style="width: 100px") #{this.price} грн.
+                  td(style="width: 100px") #{this.total} грн.
                   td
-                    button.btn.btn-default видалити з корзини
+                    button.btn.btn-default.remove-btn(id='#{this.id}') видалити з кошика
           br
           label загальна сума {{totalPrice}} грн.
           hr
@@ -32,16 +32,10 @@ template(name="cart")
           input
           br
           input(style="margin-top: 10px")
-
-        //- .col-md-6(style="text-align: right")
-        //-   label Ваш номер телефону
-        //- .col-md-6(style="text-align: left")
-        //-   input
-
         .col-lg-12(style="text-align:center")
-          textarea(style="width: 300px; height: 150px; margin-top: 30px") Додайте ваш коментар тут
+          textarea(style="width: 650px; height: 150px; margin-top: 30px") Додайте ваш коментар тут
           hr
-          button.btn.btn-primary Оформити замовлення
+          button.btn.btn-primary.sendEmail Оформити замовлення
           
 
 

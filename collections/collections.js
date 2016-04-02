@@ -76,13 +76,30 @@ Goods.attachSchema(new SimpleSchema({
 Images = new FS.Collection("images", {
   stores: [new FS.Store.GridFS("images", {path: "~/uploads"})],
   filter: {
-    maxSize: 1*750*450,
+    maxSize: 5*750*450,
     allow: {
       extensions: ['jpeg', 'jpg', 'png', 'gif'],
       contentTypes: ['image/*']
     }
   }
 });
+
+Orders = new Mongo.Collection("orders");
+Orders.attachSchema(new SimpleSchema({
+  _id: {
+    type: String,
+  },
+  details: {
+    type: [Object],
+  },
+  dateTime: {
+    type: Date
+  },
+  stage: {
+    type: String,
+    allowedValues: ['active', 'closed']
+  }
+}));
 
 // --------- Permissions -----------
 
