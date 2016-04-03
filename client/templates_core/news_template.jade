@@ -1,6 +1,6 @@
 template(name="newsTemplate")
   .row
-    .box
+    .box(id="#{this._id}")
       .col-lg-12
         hr
         h2.intro-text.text-center #{this.titlePlain} #[strong #{this.titleStrong}]
@@ -10,3 +10,7 @@ template(name="newsTemplate")
       .col-md-6
         each this.text
           p #{this.paragraph}
+        if userIsAdmin
+          hr
+          .delete-news-btn(style="float: right")
+            button.btn.btn-danger Видалити новину

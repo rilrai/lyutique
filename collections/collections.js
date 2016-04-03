@@ -1,4 +1,5 @@
 // ------ Additionsl Schemas ------------
+
 var textSchema, imageSchema, priceSchema;
 
 textSchema = new SimpleSchema({
@@ -76,7 +77,7 @@ Goods.attachSchema(new SimpleSchema({
 Images = new FS.Collection("images", {
   stores: [new FS.Store.GridFS("images", {path: "~/uploads"})],
   filter: {
-    maxSize: 5*750*450,
+    maxSize: 1*750*450,
     allow: {
       extensions: ['jpeg', 'jpg', 'png', 'gif'],
       contentTypes: ['image/*']
@@ -103,58 +104,54 @@ Orders.attachSchema(new SimpleSchema({
 
 // --------- Permissions -----------
 
+News.allow({
+  update: function () {
+    if (Meteor.user().username == "admin" || Meteor.user().username == "rilrai")
+      return true
+  },
+  insert: function () {
+    if (Meteor.user().username == "admin" || Meteor.user().username == "rilrai")
+      return true
+  },
+  remove: function () {
+    if (Meteor.user().username == "admin" || Meteor.user().username == "rilrai")
+      return true
+  }
+});
 
-// News.allow({
-//   insert: function () {
-//     if (Session.get("security")) return true
-//     return false
-//   },
-//   remove: function () {
-//     if (Session.get("security")) return true
-//     return false
-//   }
-// });
 
-
-// Goods.allow({
-//   insert: function () {
-//     if (Session.get("security")) return true
-//     return false
-//   },
-//   remove: function () {
-//     if (Session.get("security")) return true
-//     return false
-//   }
-// });
+Goods.allow({
+  update: function () {
+    if (Meteor.user().username == "admin" || Meteor.user().username == "rilrai")
+      return true
+  },
+  insert: function () {
+    if (Meteor.user().username == "admin" || Meteor.user().username == "rilrai")
+      return true
+  },
+  remove: function () {
+    if (Meteor.user().username == "admin" || Meteor.user().username == "rilrai")
+      return true
+  }
+});
 
 
 Images.allow({
   update: function () {
-    return true
+    if (Meteor.user().username == "admin" || Meteor.user().username == "rilrai")
+      return true
   },
   insert: function () {
-    return true
+    if (Meteor.user().username == "admin" || Meteor.user().username == "rilrai")
+      return true
   },
   remove: function () {
-    return true
+    if (Meteor.user().username == "admin" || Meteor.user().username == "rilrai")
+      return true
   },
   download: function () {
     return true
   }
 });
 
-Images.deny({
-  insert: function(){
-    return false;
-  },
-  update: function(){
-    return false;
-  },
-  remove: function(){
-    return false;
-  },
-  download: function(){
-    return false;
-  }
-});
 

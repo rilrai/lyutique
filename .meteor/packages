@@ -26,7 +26,6 @@ sacha:spin
 email
 reactive-var
 
-insecure                # To be deleted after development stage
 
 cfs:standard-packages
 cfs:filesystem
