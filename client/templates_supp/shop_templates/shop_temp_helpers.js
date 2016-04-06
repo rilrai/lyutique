@@ -12,11 +12,18 @@ Template.lipsEyes.helpers({
 
     if (result)
       return result
+  },
+  userIsAdmin: function() {
+    try {
+      if (Meteor.user().username == "admin" || Meteor.user().username == "rilrai")
+        return true
+    } catch (err) {}
+    return false
   }
-})
+});
 
 Template.lipsEyes.events({
-  'click button': function(e,t) {
+  'click .add-to-cart-btn': function(e,t) {
     var el = e.target;
         box = el.parentNode.parentNode.parentNode,
         sess = Session.get('Lyutique_cart_piu_piu'),
@@ -45,6 +52,41 @@ Template.lipsEyes.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+  },
 
+  'click .delete-news-btn': function(e,t) {
+    var el = e.target,
+        box = el.parentNode.parentNode.parentNode,
+        id = box.id;
+
+    if (confirm("Ви впевнені, що бажаєте остаточно і назавжди видалити цей товар?"))
+      Goods.remove({_id: id});
+    
+    return true
   }
-})
+});
+
+Template.faceCreamsYoung.helpers({
+  goods: function() {
+    var result = Goods.find({category: 'Face creams', subcategory: 'Young skin'});
+    return result
+  },
+  image: function() {
+    var src = this.images[0].image,
+        result;
+    try {
+      result = Images.findOne({'original.name': src}).url()
+    } catch(err) {}
+
+    if (result)
+      return result
+  },
+  userIsAdmin: function() {
+    try {
+      if (Meteor.user().username == "admin" || Meteor.user().username == "rilrai")
+        return true
+    } catch (err) {}
+    return false
+  }
+});
+

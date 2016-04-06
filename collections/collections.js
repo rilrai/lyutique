@@ -49,7 +49,8 @@ News.attachSchema(new SimpleSchema({
 Goods = new Mongo.Collection("goods");
 Goods.attachSchema(new SimpleSchema({
     titlePlain: {
-      type: String
+      type: String,
+      optional: true
     },
     titleStrong: {
       type: String,
@@ -58,6 +59,11 @@ Goods.attachSchema(new SimpleSchema({
     category: {
       type: String,
       allowedValues: ['Lips & eyes', 'Hands & legs', 'Face creams', 'Face care', 'Perfumes', 'Body care', 'Hair care', 'Scrubs', 'Bath & soul', 'Maski-show', 'Sets']
+    },
+    subcategory: {
+      type: String,
+      allowedValues: ['Young skin', 'Mature skin', '45+', 'with Acid'],
+      optional: true
     },
     goodsType: {
       type: String,

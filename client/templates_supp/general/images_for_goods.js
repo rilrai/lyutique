@@ -1,4 +1,4 @@
-Template.carouselForGoods.helpers({
+Template.imagesForGoods.helpers({
   firstImage: function() {
     var target, name, image;
     try {

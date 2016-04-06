@@ -1,2 +1,20 @@
 template(name="faceCreams")
   .container
+    .row
+      .box
+        .col-md-4
+          a(href="{{pathFor 'faceCreamsYoung'}}")
+            img.img-responsive.img-border-left(src="img/news02_lg.jpg" alt="" width="100%")
+          h2.intro-text.text-center #[strong молода] шкіра
+        .col-md-4
+          a(href="{{pathFor 'faceCreamsMature'}}")
+            img.img-responsive.img-border-left(src="img/news02_lg.jpg" alt="" width="100%")
+          h2.intro-text.text-center #[strong зріла] шкіра
+        .col-md-4
+          a(href="{{pathFor 'faceCreams45'}}")
+            img.img-responsive.img-border-left(src="img/news02_lg.jpg" alt="" width="100%")
+          h2.intro-text.text-center(style = "font-size: 1.5em") #[strong 45+] 
+        .col-md-4
+          a(href="{{pathFor 'faceCreamsAcid'}}")
+            img.img-responsive.img-border-left(src="img/news02_lg.jpg" alt="" width="100%")
+          h2.intro-text.text-center #[strong з гіалуроновою] кислотою

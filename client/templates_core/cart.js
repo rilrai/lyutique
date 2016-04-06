@@ -83,20 +83,13 @@ Template.cart.events({
       emailText += order[i].name + ':\nкількість - ' + order[i].quantity + '\nціна - ' + order[i].price + ' грн.\n\n';
     }
 
-    emailText += '\nЗагальна сума ' + t.generalCost.get() + '\n';
+    emailText += '\nЗагальна сума ' + t.generalCost.get() + ' грн.\n';
 
     Meteor.call('sendTextEmail',
                 'riddler-@ukr.net',
                 'lyutiquenyashmyash@gmail.com',
                 'Hello from Lyutique!',
                 emailText);
-
-    // Meteor.call('sendHtmlEmail',
-    //             'riddler-@ukr.net',
-    //             'lyutiquenyashmyash@gmail.com',
-    //             'Hello from Lyutique!',
-    //             'some text from me',
-    //             html);
 
     delete Session.keys['Lyutique_cart_piu_piu'];
   }
