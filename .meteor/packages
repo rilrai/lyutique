@@ -12,29 +12,25 @@ session                 # Client-side reactive dictionary for your app
 jquery                  # Helpful client-side library
 tracker                 # Meteor's client-side reactive programming library
 
-standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 accounts-ui
-
-twbs:bootstrap
 accounts-password
+twbs:bootstrap
 mquandalle:jade
-iron:router
-sacha:spin
 email
 reactive-var
-
+iron:router
+sacha:spin
 
 cfs:standard-packages
-cfs:filesystem
 cfs:gridfs
-cfs:s3
-
 aldeed:simple-schema
 aldeed:autoform
 aldeed:collection2
-
 dbarrett:dropzonejs
 
+standard-minifier-css
+standard-minifier-js
+peppelg:bootstrap-3-modal

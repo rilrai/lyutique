@@ -1,2 +1,25 @@
 template(name="faceCare")
   .container
+    each goods
+      .row
+        .box(id="#{this._id}")
+          .col-lg-12
+            hr
+            h2.intro-text.text-center #{this.titlePlain} #[strong #{this.titleStrong}]
+            hr
+          .col-md-6
+            {{>imagesForGoods}}
+          .col-md-6
+            each this.text
+              p #{this.paragraph}
+            hr
+            each this.price
+              .col-md-8.col-md-offset-2(style="margin-bottom: 5px")
+                label.inline #{this.amount} #{this.units}  -  #{this.cost} грн.
+                button.btn.inline.btn-default.add-to-cart-btn(style="float: right" id="#{this.amount}")
+                  | Додати до кошика
+              br
+            if userIsAdmin
+              hr
+              .delete-news-btn(style="float: right")
+                button.btn.btn-danger Видалити цей товар

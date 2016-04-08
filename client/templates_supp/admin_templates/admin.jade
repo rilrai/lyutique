@@ -4,7 +4,7 @@ template(name="adminPage")
       .box(style="height: 2000px; overflow-y: auto")
         .col-lg-12(style="text-align:center")
           {{> loginButtons}}
-        .col-lg-12(style="text-align:center")
+          hr
           unless validation
             label.someMargin#passLabel Будьте ласкаві ввести пароль
             input.someMargin#passInput
@@ -20,9 +20,7 @@ template(name="adminPage")
                   option(value="1") Додати зображення
                   option(value="2") Додати новину
                   option(value="3") Додати товар
-                  option(value="4") Видалити новину
-                  option(value="5") Видалити товар
-                  option(value="6") Любові...
+                  option(value="4") Любові...
 
             hr(style="width: 50%; text-align:center")
             .col-md-8.col-md-offset-2.forms(style = "width: 70%; text-align: center")
@@ -32,10 +30,6 @@ template(name="adminPage")
                 {{> addNews}}
               if desireAddGoods
                 {{> addGoods}}
-              if desireDelNews
-                {{> deleteNews}}
-              if desireDelGoods
-                {{> deleteGoods}}
               if desireDelGoods
                 {{> giveLove}}
             

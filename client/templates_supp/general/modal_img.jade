@@ -1,0 +1,11 @@
+template(name="modalImage")
+  .modal.fade
+    .modal-dialog(style="width:50%")
+      .modal-content(style="width: 100%")
+        .modal-body(style="height: 90%")
+          .grid(style="height:100%; overflow: auto")
+            img.img-responsive.img-border-left(src="#{img}" alt="" width="100%")
+          .clearfix
+        .modal-footer
+          .col-lg-12(style="text-align: center")
+            button.btn.btn-default Закрити

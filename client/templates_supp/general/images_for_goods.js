@@ -28,3 +28,17 @@ Template.imagesForGoods.helpers({
     return images
   },
 })
+
+Template.imagesForGoods.events({
+  'click img': function(e,t) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    var el = e.target,
+        id = el.id;
+
+    Session.set('imgForModal', id);
+
+    Modal.show('modalImage');
+  }
+})
