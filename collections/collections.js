@@ -43,6 +43,9 @@ News.attachSchema(new SimpleSchema({
     },
     text: {
       type: [textSchema]
+    },
+    dateTime: {
+      type: Date,
     }
 }));
 
@@ -77,7 +80,10 @@ Goods.attachSchema(new SimpleSchema({
     },
     price: {
       type: [priceSchema]
-    }
+    },
+    // dateTime: {
+    //   type: Date,
+    // }
 }));
 
 Images = new FS.Collection("images", {
@@ -91,22 +97,6 @@ Images = new FS.Collection("images", {
   }
 });
 
-Orders = new Mongo.Collection("orders");
-Orders.attachSchema(new SimpleSchema({
-  _id: {
-    type: String,
-  },
-  details: {
-    type: [Object],
-  },
-  dateTime: {
-    type: Date
-  },
-  stage: {
-    type: String,
-    allowedValues: ['active', 'closed']
-  }
-}));
 
 // --------- Permissions -----------
 

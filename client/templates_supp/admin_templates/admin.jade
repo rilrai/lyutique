@@ -2,7 +2,7 @@ template(name="adminPage")
   .container
     .row
       .box(style="height: 2000px; overflow-y: auto")
-        .col-lg-12(style="text-align:center")
+        .col-lg-12.text-center
           {{> loginButtons}}
           hr
           unless validation
@@ -12,9 +12,9 @@ template(name="adminPage")
 
           else
             .row
-              .col-md-6(style="text-align: right")
+              .col-md-6.text-right
                 label Чого пані бажає?
-              .col-md-6(style="text-align: left")
+              .col-md-6.text-left
                 select#desireSelect
                   option(value="0") (оберіть)
                   option(value="1") Додати зображення
@@ -22,8 +22,8 @@ template(name="adminPage")
                   option(value="3") Додати товар
                   option(value="4") Любові...
 
-            hr(style="width: 50%; text-align:center")
-            .col-md-8.col-md-offset-2.forms(style = "width: 70%; text-align: center")
+            hr.text-center(style="width: 50%")
+            .col-md-8.col-md-offset-2.forms.text-center(style = "width: 70%")
               if desireAddImage
                 {{> uploadFiles}}
               if desireAddNews

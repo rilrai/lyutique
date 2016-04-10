@@ -20,7 +20,16 @@ Template.lipsEyes.helpers({
         return true
     } catch (err) {}
     return false
-  }
+  },
+  multi: function() {
+    var type = this.goodsType,
+        result = false;
+
+    if(type == 'multi')
+      result = true;
+
+    return result
+  },
 });
 
 Template.lipsEyes.events({
@@ -53,6 +62,10 @@ Template.lipsEyes.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+    el.classList.remove('btn-default');
+    el.classList.remove('add-to-cart-btn');
+    el.classList.add('btn-success');
+    el.textContent = "у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -91,6 +104,15 @@ Template.bathSoul.helpers({
         return true
     } catch (err) {}
     return false
+  },
+  multi: function() {
+    var type = this.goodsType,
+        result = false;
+
+    if(type == 'multi')
+      result = true;
+
+    return result
   }
 });
 
@@ -124,6 +146,10 @@ Template.bathSoul.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+    el.classList.remove('btn-default');
+    el.classList.remove('add-to-cart-btn');
+    el.classList.add('btn-success');
+    el.textContent = "Товар у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -162,6 +188,15 @@ Template.bodyCare.helpers({
         return true
     } catch (err) {}
     return false
+  },
+  multi: function() {
+    var type = this.goodsType,
+        result = false;
+
+    if(type == 'multi')
+      result = true;
+
+    return result
   }
 });
 
@@ -195,6 +230,10 @@ Template.bodyCare.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+    el.classList.remove('btn-default');
+    el.classList.remove('add-to-cart-btn');
+    el.classList.add('btn-success');
+    el.textContent = "Товар у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -233,6 +272,15 @@ Template.faceCare.helpers({
         return true
     } catch (err) {}
     return false
+  },
+  multi: function() {
+    var type = this.goodsType,
+        result = false;
+
+    if(type == 'multi')
+      result = true;
+
+    return result
   }
 });
 
@@ -266,6 +314,10 @@ Template.faceCare.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+    el.classList.remove('btn-default');
+    el.classList.remove('add-to-cart-btn');
+    el.classList.add('btn-success');
+    el.textContent = "Товар у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -304,6 +356,15 @@ Template.hairCare.helpers({
         return true
     } catch (err) {}
     return false
+  },
+  multi: function() {
+    var type = this.goodsType,
+        result = false;
+
+    if(type == 'multi')
+      result = true;
+
+    return result
   }
 });
 
@@ -337,6 +398,10 @@ Template.hairCare.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+    el.classList.remove('btn-default');
+    el.classList.remove('add-to-cart-btn');
+    el.classList.add('btn-success');
+    el.textContent = "Товар у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -375,6 +440,15 @@ Template.handsLegs.helpers({
         return true
     } catch (err) {}
     return false
+  },
+  multi: function() {
+    var type = this.goodsType,
+        result = false;
+
+    if(type == 'multi')
+      result = true;
+
+    return result
   }
 });
 
@@ -408,6 +482,10 @@ Template.handsLegs.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+    el.classList.remove('btn-default');
+    el.classList.remove('add-to-cart-btn');
+    el.classList.add('btn-success');
+    el.textContent = "Товар у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -446,6 +524,15 @@ Template.maskiShow.helpers({
         return true
     } catch (err) {}
     return false
+  },
+  multi: function() {
+    var type = this.goodsType,
+        result = false;
+
+    if(type == 'multi')
+      result = true;
+
+    return result
   }
 });
 
@@ -479,6 +566,10 @@ Template.maskiShow.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+    el.classList.remove('btn-default');
+    el.classList.remove('add-to-cart-btn');
+    el.classList.add('btn-success');
+    el.textContent = "Товар у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -516,6 +607,15 @@ Template.perfumes.helpers({
         return true
     } catch (err) {}
     return false
+  },
+  multi: function() {
+    var type = this.goodsType,
+        result = false;
+
+    if(type == 'multi')
+      result = true;
+
+    return result
   }
 });
 
@@ -549,6 +649,10 @@ Template.perfumes.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+    el.classList.remove('btn-default');
+    el.classList.remove('add-to-cart-btn');
+    el.classList.add('btn-success');
+    el.textContent = "Товар у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -586,6 +690,15 @@ Template.scrubs.helpers({
         return true
     } catch (err) {}
     return false
+  },
+  multi: function() {
+    var type = this.goodsType,
+        result = false;
+
+    if(type == 'multi')
+      result = true;
+
+    return result
   }
 });
 
@@ -619,6 +732,10 @@ Template.scrubs.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+    el.classList.remove('btn-default');
+    el.classList.remove('add-to-cart-btn');
+    el.classList.add('btn-success');
+    el.textContent = "Товар у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -656,6 +773,15 @@ Template.sets.helpers({
         return true
     } catch (err) {}
     return false
+  },
+  multi: function() {
+    var type = this.goodsType,
+        result = false;
+
+    if(type == 'multi')
+      result = true;
+
+    return result
   }
 });
 
@@ -689,6 +815,10 @@ Template.sets.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+    el.classList.remove('btn-default');
+    el.classList.remove('add-to-cart-btn');
+    el.classList.add('btn-success');
+    el.textContent = "Товар у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -729,6 +859,15 @@ Template.faceCreamsYoung.helpers({
         return true
     } catch (err) {}
     return false
+  },
+  multi: function() {
+    var type = this.goodsType,
+        result = false;
+
+    if(type == 'multi')
+      result = true;
+
+    return result
   }
 });
 
@@ -762,6 +901,10 @@ Template.faceCreamsYoung.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+    el.classList.remove('btn-default');
+    el.classList.remove('add-to-cart-btn');
+    el.classList.add('btn-success');
+    el.textContent = "Товар у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -800,6 +943,15 @@ Template.faceCreamsMature.helpers({
         return true
     } catch (err) {}
     return false
+  },
+  multi: function() {
+    var type = this.goodsType,
+        result = false;
+
+    if(type == 'multi')
+      result = true;
+
+    return result
   }
 });
 
@@ -833,6 +985,10 @@ Template.faceCreamsMature.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+    el.classList.remove('btn-default');
+    el.classList.remove('add-to-cart-btn');
+    el.classList.add('btn-success');
+    el.textContent = "Товар у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -871,6 +1027,15 @@ Template.faceCreams45.helpers({
         return true
     } catch (err) {}
     return false
+  },
+  multi: function() {
+    var type = this.goodsType,
+        result = false;
+
+    if(type == 'multi')
+      result = true;
+
+    return result
   }
 });
 
@@ -904,6 +1069,10 @@ Template.faceCreams45.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+    el.classList.remove('btn-default');
+    el.classList.remove('add-to-cart-btn');
+    el.classList.add('btn-success');
+    el.textContent = "Товар у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -942,6 +1111,15 @@ Template.faceCreamsAcid.helpers({
         return true
     } catch (err) {}
     return false
+  },
+  multi: function() {
+    var type = this.goodsType,
+        result = false;
+
+    if(type == 'multi')
+      result = true;
+
+    return result
   }
 });
 
@@ -975,6 +1153,10 @@ Template.faceCreamsAcid.events({
       sess = [temp];
       Session.set('Lyutique_cart_piu_piu',sess);
     }
+    el.classList.remove('btn-default');
+    el.classList.remove('add-to-cart-btn');
+    el.classList.add('btn-success');
+    el.textContent = "Товар у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {

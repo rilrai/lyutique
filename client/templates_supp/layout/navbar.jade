@@ -8,22 +8,13 @@ template(name="navbar")
           span.icon-bar
           span.icon-bar
           span.icon-bar
-
         a.navbar-brand(href="{{pathFor 'indexTemplate'}}") Lyutique
-
       .collapse.navbar-collapse(id="lyutique-navbar-collapse-1")
         ul.nav.navbar-nav
           li.nav-a
             a(href="{{pathFor 'indexTemplate'}}") головна
           li.dropdown.nav-a
             a(href="{{pathFor 'shop'}}") магазин
-            //- ul.sub-menu
-            //-     li
-            //-       a(href="soul.html") <small>для</small> душі
-            //-     li
-            //-       a(href="soul.html") <small>для</small> тіла
-            //-     li
-            //-       a(href="soul.html") <small>для</small> волосся
           li.nav-a
             a(href="{{pathFor 'about'}}") про нас
           li.nav-a
@@ -32,6 +23,7 @@ template(name="navbar")
             div
             a(href="{{pathFor 'cart'}}")
               img.img-cart(src="img/cart2.png" alt="")
+              span.badge #{badgeNum}
           //- li(style="font-size: 0.7em; text-transform: lowercase; letter-spacing: 0px; margin-top: 30px; margin-left: 20px; color: #333")
           //-   {{>loginButtons}}
     

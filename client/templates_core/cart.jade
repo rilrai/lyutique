@@ -2,7 +2,7 @@ template(name="cart")
   .container
     .row
       .box
-        .col-lg-12(style="text-align:center")
+        .col-lg-12.text-center
           hr
           h2.intro-text.text-center #[strong Кошик]
           hr
@@ -16,7 +16,11 @@ template(name="cart")
               each goodsNames
                 tr
                   td(style="width: 500px") #{this.name}
-                  td(style="width: 200px") #{this.quantity}
+                  td(style="width: 200px") 
+                    .amount.inline
+                      span.glyphicon.glyphicon-menu-left(id = "#{this.id}")
+                      span.amount-span(id = "#{this.id}") #{this.quantity}
+                      span.glyphicon.glyphicon-menu-right(id = "#{this.id}")
                   td(style="width: 100px") #{this.price} грн.
                   td(style="width: 100px") #{this.total} грн.
                   td
@@ -24,22 +28,52 @@ template(name="cart")
           br
           label загальна сума {{totalPrice}} грн.
           hr
-        .col-md-6(style="text-align: right")
-          label Ваше ім'я
+        .col-md-6.col-md-offset-3.text-center
+          label
+            | Увага! Просимо уважно заповнити усі поля, відмічені зірочкою для корректної обробки нами Вашого замовлення
           br
-          label(style="margin-top: 10px; width: 400px") Ваш номер телефону
           br
-          label(style="margin-top: 10px; width: 400px") Ваша електронна адреса (email)
-        .col-md-6(style="text-align: left")
-          input.input-name
+          label.cart-label Ваше ім'я *
+          input.form-control#input-name
           br
-          input.input-tel(style="margin-top: 10px")
+          label.cart-label Ваш номер телефону *
+          input.form-control#input-tel
           br
-          input.input-email(style="margin-top: 10px")
-        .col-lg-12(style="text-align:center")
-          textarea(style="width: 650px; height: 150px; margin-top: 30px") Додайте ваш коментар тут
+          label.cart-label Ваша електронна адреса
+          input.form-control#input-email
+          br
+          label.cart-label зручний для Вас вид доставки *
+          select.form-control#select-delivery
+            option(value="0") (оберіть)
+            option(value="1") Доставка УкрПоштою
+            option(value="2") Доставка Новою Поштою
+            option(value="3") Самовивіз 
+            option(value="4") Зустріч у місті Києві
+          br
+          if deliverySelected
+            label.cart-label зручний для Вас вид оплати *
+            select.form-control#select-payment
+              option(value="0") (оберіть)
+              option(value="1") Передплата на карту ПриватБанку
+              if notDeliveryPost
+                option(value="2") Готівковий розрахунок
+            br
+            if deliveryPost
+              label.cart-label місто де Ви будете очікувати на замовлення
+              input.form-control#input-city
+              br
+            if ukrPost
+              label.cart-label адреса за якою Ви будете очікувати на замовлення
+              input.form-control#input-adress
+              br
+            if newPost
+              label.cart-label номер відділення Нової Пошти
+              input.form-control#input-npOffice
+              br
+          label.cart-label Додайте ваш коментар
+          textarea.form-control#textarea-commentary
           hr
-          button.btn.btn-primary.sendEmail Оформити замовлення
-          
+          button.btn.btn-primary#sendEmail Оформити замовлення
+
 
 
