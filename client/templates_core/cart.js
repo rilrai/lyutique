@@ -157,7 +157,7 @@ Template.cart.events({
     var data = {name: "Vova"},
         html = Blaze.toHTMLWithData(Template.cart, data),
         emailText = '',
-        eamilToClient = '',
+        emailToClient = '',
         emailTitle = '',
         userName,
         userPhone,
@@ -216,9 +216,23 @@ Template.cart.events({
 
       Meteor.call('sendTextEmail',
                   'riddler-@ukr.net',
-                  'lyutiquenyashmyash@gmail.com',
-                  'Hello from Lyutique!',
+                  'lyutiqueboutique@gmail.com',
+                  userName,
                   emailText);
+
+      if (userEmail) {
+        emailToClient += 'Доброго дня!\nВас вітає майстерня свіжої натуральної косметики Lyutique.';
+        emailToClient += '\nВи оформили замовлення на сайті lyutique.com';
+        emailToClient += '\nДякуємо за Ваш вибір.\n\n';
+        emailToClient += emailText;
+
+        Meteor.call('sendTextEmail',
+                    userEmail,
+                    'lyutiqueboutique@gmail.com',
+                    'Ваше замовлення прийнято',
+                    emailToClient);
+      }
+      
 
       delete Session.keys['Lyutique_cart_piu_piu'];
 

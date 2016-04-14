@@ -1,12 +1,15 @@
-Template.newsTemplate.helpers({
+Template.feedbacks.helpers({
   image: function() {
     var src = this.image,
         result;
     try {
       result = Images.findOne({'original.name': src}).url()
     } catch(err) {}
+    
+    if (result)
+      return result
 
-    return result
+    return true
   },
 
   userIsAdmin: function() {
@@ -18,14 +21,14 @@ Template.newsTemplate.helpers({
   }
 });
 
-Template.newsTemplate.events({
-  'click .delete-news-btn': function(e,t) {
+Template.feedbacks.events({
+  'click .delete-feedback-btn': function(e,t) {
     var el = e.target,
-        box = el.parentNode.parentNode.parentNode,
+        box = el.parentNode.parentNode,
         id = box.id;
 
-    if (confirm("Ви впевнені, що бажаєте остаточно і назавжди видалити цю новину?"))
-      News.remove({_id: id});
+    if (confirm("Ви впевнені, що бажаєте остаточно і назавжди видалити цей відгук?"))
+      Feedbacks.remove({_id: id});
     
     return true
   }

@@ -86,6 +86,22 @@ Goods.attachSchema(new SimpleSchema({
     // }
 }));
 
+Feedbacks = new Mongo.Collection("feedbacks");
+Feedbacks.attachSchema(new SimpleSchema({
+  name: {
+    type: String
+  },
+  image: {
+    type: String,
+  },
+  text: {
+    type: [textSchema]
+  },
+  dateTime: {
+    type: Date,
+  }
+}));
+
 Images = new FS.Collection("images", {
   stores: [new FS.Store.GridFS("images", {path: "~/uploads"})],
   filter: {
@@ -131,8 +147,7 @@ Goods.allow({
   }
 });
 
-
-Images.allow({
+Feedbacks.allow({
   update: function () {
     if (Meteor.user().username == "admin" || Meteor.user().username == "rilrai")
       return true
@@ -144,8 +159,21 @@ Images.allow({
   remove: function () {
     if (Meteor.user().username == "admin" || Meteor.user().username == "rilrai")
       return true
+  }
+});
+
+
+Images.allow({
+  insert: function () {
+    return true
+  },
+  update: function () {
+    return true
   },
   download: function () {
+    return true
+  },
+  remove: function () {
     return true
   }
 });

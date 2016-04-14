@@ -149,7 +149,7 @@ Template.bathSoul.events({
     el.classList.remove('btn-default');
     el.classList.remove('add-to-cart-btn');
     el.classList.add('btn-success');
-    el.textContent = "Товар у кошику!";
+    el.textContent = "у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -233,7 +233,7 @@ Template.bodyCare.events({
     el.classList.remove('btn-default');
     el.classList.remove('add-to-cart-btn');
     el.classList.add('btn-success');
-    el.textContent = "Товар у кошику!";
+    el.textContent = "у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -317,7 +317,7 @@ Template.faceCare.events({
     el.classList.remove('btn-default');
     el.classList.remove('add-to-cart-btn');
     el.classList.add('btn-success');
-    el.textContent = "Товар у кошику!";
+    el.textContent = "у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -401,7 +401,7 @@ Template.hairCare.events({
     el.classList.remove('btn-default');
     el.classList.remove('add-to-cart-btn');
     el.classList.add('btn-success');
-    el.textContent = "Товар у кошику!";
+    el.textContent = "у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -485,7 +485,7 @@ Template.handsLegs.events({
     el.classList.remove('btn-default');
     el.classList.remove('add-to-cart-btn');
     el.classList.add('btn-success');
-    el.textContent = "Товар у кошику!";
+    el.textContent = "у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -569,7 +569,7 @@ Template.maskiShow.events({
     el.classList.remove('btn-default');
     el.classList.remove('add-to-cart-btn');
     el.classList.add('btn-success');
-    el.textContent = "Товар у кошику!";
+    el.textContent = "у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -652,7 +652,7 @@ Template.perfumes.events({
     el.classList.remove('btn-default');
     el.classList.remove('add-to-cart-btn');
     el.classList.add('btn-success');
-    el.textContent = "Товар у кошику!";
+    el.textContent = "у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -735,7 +735,7 @@ Template.scrubs.events({
     el.classList.remove('btn-default');
     el.classList.remove('add-to-cart-btn');
     el.classList.add('btn-success');
-    el.textContent = "Товар у кошику!";
+    el.textContent = "у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -818,7 +818,7 @@ Template.sets.events({
     el.classList.remove('btn-default');
     el.classList.remove('add-to-cart-btn');
     el.classList.add('btn-success');
-    el.textContent = "Товар у кошику!";
+    el.textContent = "у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -904,7 +904,7 @@ Template.faceCreamsYoung.events({
     el.classList.remove('btn-default');
     el.classList.remove('add-to-cart-btn');
     el.classList.add('btn-success');
-    el.textContent = "Товар у кошику!";
+    el.textContent = "у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -988,7 +988,7 @@ Template.faceCreamsMature.events({
     el.classList.remove('btn-default');
     el.classList.remove('add-to-cart-btn');
     el.classList.add('btn-success');
-    el.textContent = "Товар у кошику!";
+    el.textContent = "у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -1072,7 +1072,7 @@ Template.faceCreams45.events({
     el.classList.remove('btn-default');
     el.classList.remove('add-to-cart-btn');
     el.classList.add('btn-success');
-    el.textContent = "Товар у кошику!";
+    el.textContent = "у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {
@@ -1156,7 +1156,7 @@ Template.faceCreamsAcid.events({
     el.classList.remove('btn-default');
     el.classList.remove('add-to-cart-btn');
     el.classList.add('btn-success');
-    el.textContent = "Товар у кошику!";
+    el.textContent = "у кошику!";
   },
 
   'click .delete-news-btn': function(e,t) {

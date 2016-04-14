@@ -1,0 +1,14 @@
+template(name="feedbacks")
+  .row(class = "#{this._id}")
+    .col-lg-12
+      p.brand-before.text-center #[strong #{this.name}]
+    .col-md-6
+      img.img-responsive.img-border-left(src="#{image}" alt="" width="100%")
+    .col-md-6      
+      each this.text
+        p #{this.paragraph}
+      if userIsAdmin
+        hr
+        .delete-feedback-btn(style="float: right")
+          button.btn.btn-danger Видалити відгук
+  hr

@@ -1,3 +1,3 @@
 Meteor.startup(function () {
-  process.env.MAIL_URL = 'smtp://lyutiquenyashmyash%40gmail.com:yzivzi123@smtp.gmail.com:587';
+  process.env.MAIL_URL = 'smtp://lyutiqueboutique%40gmail.com:wearehappy@smtp.gmail.com:587';
 });
